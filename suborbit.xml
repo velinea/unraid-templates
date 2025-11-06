@@ -1,0 +1,37 @@
+<Container>
+  <Name>SubOrbit</Name>
+  <Repository>ghcr.io/velinea/suborbit:latest</Repository>
+  <Registry>https://github.com/velinea/suborbit</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/velinea/suborbit/issues</Support>
+  <Project>https://github.com/velinea/suborbit</Project>
+  <Category>MediaApp:Video</Category>
+  <Overview>Subtitle-aware movie discovery and Radarr companion.</Overview>
+  <WebUI>http://[IP]:[PORT:5000]</WebUI>
+  <Icon>https://raw.githubusercontent.com/velinea/suborbit/main/static/octopus_logo.png</Icon>
+  <DateInstalled/>
+  <Description>
+    SubOrbit fetches movies with subtitles in your chosen language, filters them by ratings, and optionally adds them directly to Radarr.
+  </Description>
+
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>5000</HostPort>
+        <ContainerPort>5000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/suborbit</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+
+ </Container>
